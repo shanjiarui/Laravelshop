@@ -2,10 +2,11 @@
 
 namespace App;
 
+use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements JWTSubject
 {
     use Notifiable;
 
@@ -14,7 +15,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $table= "user";
+//    protected $table= "users";
 //    public function getRouteKeyName()
 //    {
 //        return 'user_name';
@@ -36,6 +37,19 @@ class User extends Authenticatable
 //     *
 //     * @return string
 //     */
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
 
+    /**
+     * Return a key value array, containing any custom claims to be added to the JWT.
+     *
+     * @return array
+     */
+    public function getJWTCustomClaims()
+    {
+        return [];
+    }
 
 }

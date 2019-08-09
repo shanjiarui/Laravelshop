@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\facades\Input;
 //use Request;
@@ -69,6 +70,9 @@ class ShowController extends Controller
         }
         echo json_encode($js);
     }
-
+    public function md(){
+        $hashed = Hash::make('aaa');
+        echo $hashed;
+    }
 
 }

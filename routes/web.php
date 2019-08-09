@@ -34,10 +34,7 @@ Route::group(['middleware' => App\Http\Middleware\CheckToken::class,], function 
     Route::post('/up_action', 'ShowController@up_action');
     Route::post('/my_up', 'ShowController@my_up');
 });
-Route::any('/hot', 'HotController@is_hot');
-Route::any('/tree', 'HotController@tree');
-Route::any('/home_goods', 'HotController@home_goods');
-// Route::any('/hot', 'LoginController@hot');
+
 //    中间件组web在web.php中自动调用
 //    Route::get('form_without_csrf_token', function (){
 //        return '<form method="POST" action="hello_from_form"><button type="submit">提交</button></form>';
