@@ -1,0 +1,6 @@
+Array
+(
+    [m] => monkey
+    [foo] => bar
+    [x] => 123
+)
